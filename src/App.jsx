@@ -385,27 +385,39 @@ export default function App() {
     const fetchData = async () => {
       setLoading(true); setApiError(''); setApiSuccess(false)
       try {
-        const empRes  = await fetch(`${API_BASE_URL}/api/employees`,  { signal: controller.signal })
+        const empRes = await fetch(`${API_BASE_URL}/api/employees`, { signal: controller.signal })
         if (!empRes.ok) throw new Error(`HTTP ${empRes.status}`)
+        const contentType = empRes.headers.get('content-type') || ''
+        if (!contentType.includes('application/json')) {
+          throw new Error('Non-JSON response received (possible Vercel SSO Protection)')
+        }
         setEmployees(await empRes.json())
 
-        const attRes  = await fetch(`${API_BASE_URL}/api/attendance`,  { signal: controller.signal })
-        if (attRes.ok)  setAttendanceRecords(await attRes.json())
+        const attRes = await fetch(`${API_BASE_URL}/api/attendance`, { signal: controller.signal })
+        if (attRes.ok && (attRes.headers.get('content-type') || '').includes('json')) {
+          setAttendanceRecords(await attRes.json())
+        }
 
-        const schedRes = await fetch(`${API_BASE_URL}/api/schedule`,   { signal: controller.signal })
-        if (schedRes.ok) setSchedule(await schedRes.json())
+        const schedRes = await fetch(`${API_BASE_URL}/api/schedule`, { signal: controller.signal })
+        if (schedRes.ok && (schedRes.headers.get('content-type') || '').includes('json')) {
+          setSchedule(await schedRes.json())
+        }
 
-        const salRes  = await fetch(`${API_BASE_URL}/api/salary`,      { signal: controller.signal })
-        if (salRes.ok)  setSalaryRecords(await salRes.json())
+        const salRes = await fetch(`${API_BASE_URL}/api/salary`, { signal: controller.signal })
+        if (salRes.ok && (salRes.headers.get('content-type') || '').includes('json')) {
+          setSalaryRecords(await salRes.json())
+        }
 
-        const leaveRes = await fetch(`${API_BASE_URL}/api/leave`,      { signal: controller.signal })
-        if (leaveRes.ok) setLeaveRequests(await leaveRes.json())
+        const leaveRes = await fetch(`${API_BASE_URL}/api/leave`, { signal: controller.signal })
+        if (leaveRes.ok && (leaveRes.headers.get('content-type') || '').includes('json')) {
+          setLeaveRequests(await leaveRes.json())
+        }
 
         setApiSuccess(true)
       } catch (err) {
         if (err.name === 'AbortError') return
         console.error(err)
-        setApiError('Could not reach backend. Showing sample data.')
+        setApiError('Could not reach live backend API. Showing active demo dataset.')
         setEmployees(BASE_EMPLOYEES)
         if (salaryRecords.length === 0) setSalaryRecords(buildSalaryRecords(BASE_EMPLOYEES))
       } finally { setLoading(false) }
