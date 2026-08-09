@@ -1,20 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/index.cjs",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/index.cjs" },
-    { "src": "/uploads/(.*)", "dest": "/api/index.cjs" },
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.cjs" },
+    { "source": "/uploads/(.*)", "destination": "/api/index.cjs" },
+    { "source": "/((?!api|uploads|assets|assist|.*\\..*).*)", "destination": "/index.html" }
   ]
 }
+

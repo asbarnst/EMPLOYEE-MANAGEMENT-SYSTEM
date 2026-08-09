@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import axios from 'axios'
+import logoImg from '../assist/hicas_logo-removebg-preview.png'
 import './App.css'
 
 const getApiBaseUrl = () => {
@@ -1246,7 +1247,7 @@ export default function App() {
       <div className="pay-slip-card">
         <div className="pay-slip-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-            <img src="/assist/hicas_logo-removebg-preview.png" alt="Logo" className="pay-slip-logo" />
+            <img src={logoImg} alt="Logo" className="pay-slip-logo" />
             <div>
               <div className="pay-slip-company-name">Ashes Tech Pvt Limited</div>
               <div className="pay-slip-company-addr">Chennai, Tamil Nadu · India</div>
@@ -1344,7 +1345,7 @@ export default function App() {
           <div className="login-logo-wrap">
             <div className="login-logo-ring">
               <div className="login-logo-ring-border" />
-              <img src="/assist/hicas_logo-removebg-preview.png" alt="Ashes Tech Pvt Limited" className="login-logo-inner" />
+              <img src={logoImg} alt="Ashes Tech Pvt Limited" className="login-logo-inner" />
             </div>
             <h1 className="login-title">Ashes Tech Pvt Limited</h1>
             <p className="login-subtitle">Employee Management System v2.0</p>
@@ -1419,7 +1420,7 @@ export default function App() {
         <div>
           <div className="sidebar-logo">
             <div className="sidebar-logo-icon">
-              <img src="/assist/hicas_logo-removebg-preview.png" alt="Ashes Tech" />
+              <img src={logoImg} alt="Ashes Tech" />
             </div>
             <div className="sidebar-logo-text">Ashes Tech Pvt Ltd<span>v2.0 Premium</span></div>
           </div>
