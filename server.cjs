@@ -175,11 +175,16 @@ function initDB() {
 
 initDB();
 
-// Multer for avatar uploads
+// Multer for avatar uploads — uses /tmp in serverless (Vercel), local uploads/ otherwise
+const isServerless = !!(process.env.VERCEL || process.env.NOW_REGION || process.env.LAMBDA_TASK_ROOT);
+const UPLOAD_BASE = isServerless ? require('os').tmpdir() : path.join(__dirname, 'uploads');
+
 const avatarStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const dir = path.join(__dirname, 'uploads', 'avatars');
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    const dir = path.join(UPLOAD_BASE, 'avatars');
+    try {
+      if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    } catch (e) { /* ignore mkdir errors in read-only environments */ }
     cb(null, dir);
   },
   filename: (req, file, cb) => {
@@ -189,7 +194,7 @@ const avatarStorage = multer.diskStorage({
 });
 const avatarUpload = multer({ storage: avatarStorage, limits: { fileSize: 5 * 1024 * 1024 } });
 
-const upload = multer({ dest: "uploads/" });
+const upload = multer({ dest: path.join(UPLOAD_BASE, 'misc') });
 
 app.post("/upload", upload.any(), (req, res) => {
   res.json({ files: req.files, body: req.body });
