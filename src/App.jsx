@@ -2,7 +2,16 @@ import { useEffect, useRef, useState, useCallback } from 'react'
 import axios from 'axios'
 import './App.css'
 
-const API_BASE_URL = typeof window !== 'undefined' ? `http://${window.location.hostname}:5000` : 'http://localhost:5000'
+const getApiBaseUrl = () => {
+  if (import.meta.env.VITE_API_URL) return import.meta.env.VITE_API_URL
+  if (typeof window !== 'undefined') {
+    const isVercel = window.location.hostname.includes('vercel.app') || window.location.port === '' || window.location.port === '80' || window.location.port === '443'
+    if (isVercel) return ''
+    return `http://${window.location.hostname}:5000`
+  }
+  return 'http://localhost:5000'
+}
+const API_BASE_URL = getApiBaseUrl()
 
 const SALARY_RANGES = {
   Engineering: [85000, 150000], Operations: [55000, 90000], Sales: [50000, 85000],

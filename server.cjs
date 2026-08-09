@@ -7,7 +7,22 @@ const fs = require("fs");
 const path = require("path");
 
 const app = express();
-app.use(cors());
+const allowedOrigins = [
+  "https://employee-management-system-git-main-asbarnsts-projects.vercel.app",
+  "http://localhost:5173",
+  "http://localhost:3000",
+  "http://localhost:5000"
+];
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin) || origin.endsWith(".vercel.app")) {
+      callback(null, true);
+    } else {
+      callback(null, true);
+    }
+  },
+  credentials: true
+}));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
@@ -82,59 +97,83 @@ const INITIAL_SCHEDULE = [
   { id: 3, title: 'Training Session',   when: 'Fri 11:00 AM', icon: 'book' },
 ];
 
-function initDB() {
-  if (!fs.existsSync(DB_FILE)) {
-    const initialData = {
-      employees: INITIAL_EMPLOYEES,
-      attendance: {},
-      schedule: INITIAL_SCHEDULE,
-      salaryRecords: buildSalaryRecords(INITIAL_EMPLOYEES),
-      admin: { username: 'admin', password: 'admin123' },
-      exportLog: [],
-      leaveRequests: []
+let inMemoryDB = null;
+const TMP_DB_FILE = path.join(require("os").tmpdir(), "ems_db.json");
+
+function getInitialDBData() {
+  const initialData = {
+    employees: INITIAL_EMPLOYEES,
+    attendance: {},
+    schedule: INITIAL_SCHEDULE,
+    salaryRecords: buildSalaryRecords(INITIAL_EMPLOYEES),
+    admin: { username: 'admin', password: 'admin123' },
+    exportLog: [],
+    leaveRequests: []
+  };
+  const todayStr = new Date().toISOString().split('T')[0];
+  initialData.employees.forEach((e, i) => {
+    initialData.attendance[e.id] = {
+      [todayStr]: { status: i % 3 === 2 ? 'Absent' : 'Present', note: i % 3 === 2 ? '' : 'Auto-recorded' }
     };
-    const todayStr = new Date().toISOString().split('T')[0];
-    initialData.employees.forEach((e, i) => {
-      initialData.attendance[e.id] = {
-        [todayStr]: { status: i % 3 === 2 ? 'Absent' : 'Present', note: i % 3 === 2 ? '' : 'Auto-recorded' }
-      };
-    });
-    fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), "utf8");
-    console.log("Database initialized & seeded with 10 employees.");
-  } else {
-    // Migrate existing DB: ensure admin, exportLog, avatarPreset, leaveRequests fields exist
-    const db = readDB();
-    let dirty = false;
-    if (!db.admin) { db.admin = { username: 'admin', password: 'admin123' }; dirty = true; }
-    if (!db.exportLog) { db.exportLog = []; dirty = true; }
-    if (!db.leaveRequests) { db.leaveRequests = []; dirty = true; }
-    db.employees.forEach(e => {
-      if (e.avatarPreset === undefined) { e.avatarPreset = (e.id % 4) + 1; dirty = true; }
-      if (e.avatar === undefined) { e.avatar = null; dirty = true; }
-    });
-    if (dirty) writeDB(db);
-  }
+  });
+  return initialData;
 }
 
-initDB();
-
 function readDB() {
+  if (inMemoryDB) return inMemoryDB;
+
   try {
-    const data = fs.readFileSync(DB_FILE, "utf8");
-    return JSON.parse(data);
+    if (fs.existsSync(DB_FILE)) {
+      const data = fs.readFileSync(DB_FILE, "utf8");
+      inMemoryDB = JSON.parse(data);
+      return inMemoryDB;
+    }
   } catch (error) {
-    console.error("Error reading database file", error);
-    return { employees: [], attendance: {}, schedule: [], salaryRecords: [], admin: { username: 'admin', password: 'admin123' }, exportLog: [] };
+    console.error("Error reading main DB file:", error);
   }
+
+  try {
+    if (fs.existsSync(TMP_DB_FILE)) {
+      const data = fs.readFileSync(TMP_DB_FILE, "utf8");
+      inMemoryDB = JSON.parse(data);
+      return inMemoryDB;
+    }
+  } catch (error) {
+    console.error("Error reading temp DB file:", error);
+  }
+
+  inMemoryDB = getInitialDBData();
+  return inMemoryDB;
 }
 
 function writeDB(data) {
+  inMemoryDB = data;
   try {
     fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), "utf8");
   } catch (error) {
-    console.error("Error writing database file", error);
+    try {
+      fs.writeFileSync(TMP_DB_FILE, JSON.stringify(data, null, 2), "utf8");
+    } catch (tmpErr) {
+      console.error("Failed to write to tmp file fallback:", tmpErr);
+    }
   }
 }
+
+function initDB() {
+  const db = readDB();
+  let dirty = false;
+  if (!db.admin) { db.admin = { username: 'admin', password: 'admin123' }; dirty = true; }
+  if (!db.exportLog) { db.exportLog = []; dirty = true; }
+  if (!db.leaveRequests) { db.leaveRequests = []; dirty = true; }
+  if (!db.employees) { db.employees = INITIAL_EMPLOYEES; dirty = true; }
+  db.employees.forEach(e => {
+    if (e.avatarPreset === undefined) { e.avatarPreset = (e.id % 4) + 1; dirty = true; }
+    if (e.avatar === undefined) { e.avatar = null; dirty = true; }
+  });
+  if (dirty) writeDB(db);
+}
+
+initDB();
 
 // Multer for avatar uploads
 const avatarStorage = multer.diskStorage({
@@ -637,6 +676,11 @@ app.delete("/api/leave/:id", (req, res) => {
   res.json({ success: true, message: "Leave request deleted." });
 });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
-});
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
