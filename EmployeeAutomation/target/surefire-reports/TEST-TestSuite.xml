@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="66.906" tests="11" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="26"/>
+    <property name="webdriver.chrome.driver" value="C:\Users\USER\.cache\selenium\chromedriver\win64\150.0.7871.124\chromedriver.exe"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\USER\Desktop\Employee-management\employees-management\EmployeeAutomation\target\test-classes;C:\Users\USER\Desktop\Employee-management\employees-management\EmployeeAutomation\target\classes;C:\Users\USER\.m2\repository\io\github\bonigarcia\webdrivermanager\6.3.4\webdrivermanager-6.3.4.jar;C:\Users\USER\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\USER\.m2\repository\com\google\code\gson\gson\2.13.2\gson-2.13.2.jar;C:\Users\USER\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\USER\.m2\repository\com\github\docker-java\docker-java\3.7.1\docker-java-3.7.1.jar;C:\Users\USER\.m2\repository\com\github\docker-java\docker-java-core\3.7.1\docker-java-core-3.7.1.jar;C:\Users\USER\.m2\repository\com\github\docker-java\docker-java-api\3.7.1\docker-java-api-3.7.1.jar;C:\Users\USER\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.20\jackson-annotations-2.20.jar;C:\Users\USER\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.20.1\jackson-databind-2.20.1.jar;C:\Users\USER\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.20.1\jackson-core-2.20.1.jar;C:\Users\USER\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\USER\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.7.1\docker-java-transport-httpclient5-3.7.1.jar;C:\Users\USER\.m2\repository\com\github\docker-java\docker-java-transport\3.7.1\docker-java-transport-3.7.1.jar;C:\Users\USER\.m2\repository\net\java\dev\jna\jna\5.18.1\jna-5.18.1.jar;C:\Users\USER\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\USER\.m2\repository\org\apache\commons\commons-lang3\3.20.0\commons-lang3-3.20.0.jar;C:\Users\USER\.m2\repository\org\apache\commons\commons-compress\1.28.0\commons-compress-1.28.0.jar;C:\Users\USER\.m2\repository\commons-codec\commons-codec\1.19.0\commons-codec-1.19.0.jar;C:\Users\USER\.m2\repository\commons-io\commons-io\2.20.0\commons-io-2.20.0.jar;C:\Users\USER\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.6\httpclient5-5.6.jar;C:\Users\USER\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.4\httpcore5-5.4.jar;C:\Users\USER\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.4\httpcore5-h2-5.4.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-java\4.45.0\selenium-java-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-api\4.45.0\selenium-api-4.45.0.jar;C:\Users\USER\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.45.0\selenium-chrome-driver-4.45.0.jar;C:\Users\USER\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.45.0\selenium-chromium-driver-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-json\4.45.0\selenium-json-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.45.0\selenium-manager-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-devtools-latest\4.45.0\selenium-devtools-latest-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v147\4.45.0\selenium-devtools-v147-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v148\4.45.0\selenium-devtools-v148-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v149\4.45.0\selenium-devtools-v149-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.45.0\selenium-edge-driver-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.45.0\selenium-firefox-driver-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-http\4.45.0\selenium-http-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.45.0\selenium-ie-driver-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.45.0\selenium-remote-driver-4.45.0.jar;C:\Users\USER\.m2\repository\com\google\guava\guava\33.6.0-jre\guava-33.6.0-jre.jar;C:\Users\USER\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\USER\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\USER\.m2\repository\com\google\j2objc\j2objc-annotations\3.1\j2objc-annotations-3.1.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-api\1.63.0\opentelemetry-api-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-context\1.63.0\opentelemetry-context-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-common\1.63.0\opentelemetry-common-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.63.0\opentelemetry-exporter-logging-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.63.0\opentelemetry-sdk-common-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.63.0\opentelemetry-sdk-extension-autoconfigure-spi-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.63.0\opentelemetry-sdk-extension-autoconfigure-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.63.0\opentelemetry-sdk-trace-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.63.0\opentelemetry-sdk-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.63.0\opentelemetry-sdk-metrics-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.63.0\opentelemetry-sdk-logs-1.63.0.jar;C:\Users\USER\.m2\repository\net\bytebuddy\byte-buddy\1.18.10\byte-buddy-1.18.10.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-os\4.45.0\selenium-os-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.45.0\selenium-safari-driver-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-support\4.45.0\selenium-support-4.45.0.jar;C:\Users\USER\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\USER\.m2\repository\org\testng\testng\7.12.0\testng-7.12.0.jar;C:\Users\USER\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\USER\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="26"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-26.0.1\bin"/>
+    <property name="sun.java.command" value="C:\Users\USER\AppData\Local\Temp\surefire13020450558186777110\surefirebooter-20260718164131255_3.jar C:\Users\USER\AppData\Local\Temp\surefire13020450558186777110 2026-07-18T16-41-30_974-jvmRun1 surefire-20260718164131255_1tmp surefire_0-20260718164131255_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\USER\Desktop\Employee-management\employees-management\EmployeeAutomation\target\test-classes;C:\Users\USER\Desktop\Employee-management\employees-management\EmployeeAutomation\target\classes;C:\Users\USER\.m2\repository\io\github\bonigarcia\webdrivermanager\6.3.4\webdrivermanager-6.3.4.jar;C:\Users\USER\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\USER\.m2\repository\com\google\code\gson\gson\2.13.2\gson-2.13.2.jar;C:\Users\USER\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\USER\.m2\repository\com\github\docker-java\docker-java\3.7.1\docker-java-3.7.1.jar;C:\Users\USER\.m2\repository\com\github\docker-java\docker-java-core\3.7.1\docker-java-core-3.7.1.jar;C:\Users\USER\.m2\repository\com\github\docker-java\docker-java-api\3.7.1\docker-java-api-3.7.1.jar;C:\Users\USER\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.20\jackson-annotations-2.20.jar;C:\Users\USER\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.20.1\jackson-databind-2.20.1.jar;C:\Users\USER\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.20.1\jackson-core-2.20.1.jar;C:\Users\USER\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\USER\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.7.1\docker-java-transport-httpclient5-3.7.1.jar;C:\Users\USER\.m2\repository\com\github\docker-java\docker-java-transport\3.7.1\docker-java-transport-3.7.1.jar;C:\Users\USER\.m2\repository\net\java\dev\jna\jna\5.18.1\jna-5.18.1.jar;C:\Users\USER\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\USER\.m2\repository\org\apache\commons\commons-lang3\3.20.0\commons-lang3-3.20.0.jar;C:\Users\USER\.m2\repository\org\apache\commons\commons-compress\1.28.0\commons-compress-1.28.0.jar;C:\Users\USER\.m2\repository\commons-codec\commons-codec\1.19.0\commons-codec-1.19.0.jar;C:\Users\USER\.m2\repository\commons-io\commons-io\2.20.0\commons-io-2.20.0.jar;C:\Users\USER\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.6\httpclient5-5.6.jar;C:\Users\USER\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.4\httpcore5-5.4.jar;C:\Users\USER\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.4\httpcore5-h2-5.4.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-java\4.45.0\selenium-java-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-api\4.45.0\selenium-api-4.45.0.jar;C:\Users\USER\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.45.0\selenium-chrome-driver-4.45.0.jar;C:\Users\USER\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.45.0\selenium-chromium-driver-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-json\4.45.0\selenium-json-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.45.0\selenium-manager-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-devtools-latest\4.45.0\selenium-devtools-latest-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v147\4.45.0\selenium-devtools-v147-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v148\4.45.0\selenium-devtools-v148-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v149\4.45.0\selenium-devtools-v149-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.45.0\selenium-edge-driver-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.45.0\selenium-firefox-driver-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-http\4.45.0\selenium-http-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.45.0\selenium-ie-driver-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.45.0\selenium-remote-driver-4.45.0.jar;C:\Users\USER\.m2\repository\com\google\guava\guava\33.6.0-jre\guava-33.6.0-jre.jar;C:\Users\USER\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\USER\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\USER\.m2\repository\com\google\j2objc\j2objc-annotations\3.1\j2objc-annotations-3.1.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-api\1.63.0\opentelemetry-api-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-context\1.63.0\opentelemetry-context-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-common\1.63.0\opentelemetry-common-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.63.0\opentelemetry-exporter-logging-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.63.0\opentelemetry-sdk-common-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.63.0\opentelemetry-sdk-extension-autoconfigure-spi-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.63.0\opentelemetry-sdk-extension-autoconfigure-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.63.0\opentelemetry-sdk-trace-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.63.0\opentelemetry-sdk-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.63.0\opentelemetry-sdk-metrics-1.63.0.jar;C:\Users\USER\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.63.0\opentelemetry-sdk-logs-1.63.0.jar;C:\Users\USER\.m2\repository\net\bytebuddy\byte-buddy\1.18.10\byte-buddy-1.18.10.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-os\4.45.0\selenium-os-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.45.0\selenium-safari-driver-4.45.0.jar;C:\Users\USER\.m2\repository\org\seleniumhq\selenium\selenium-support\4.45.0\selenium-support-4.45.0.jar;C:\Users\USER\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\USER\.m2\repository\org\testng\testng\7.12.0\testng-7.12.0.jar;C:\Users\USER\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\USER\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\USER"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-26.0.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\USER\Desktop\Employee-management\employees-management\EmployeeAutomation"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\USER\AppData\Local\Temp\surefire13020450558186777110\surefirebooter-20260718164131255_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="26.0.1+8-34"/>
+    <property name="user.name" value="USER"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\USER\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\USER\AppData\Local\Temp\"/>
+    <property name="java.version" value="26.0.1"/>
+    <property name="user.dir" value="C:\Users\USER\Desktop\Employee-management\employees-management\EmployeeAutomation"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-26.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\USER\Scripts\;C:\Users\USER\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\USER\AppData\Local\Programs\Python\Python314;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\ngrok;;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\USER\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\USER\AppData\Local\Programs\Python\Python313\;C:\Users\USER\.local\bin;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\USER\AppData\Local\GitHubDesktop\bin;C:\Users\USER\AppData\Local\Python\bin;C:\Users\USER\AppData\Local\Programs\Antigravity\bin;C:\Users\USER\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\USER\AppData\Roaming\npm;C:\Program Files\apachi\apache-maven-3.9.16\bin;c:\Users\USER\.antigravity-ide\extensions\vscjava.vscode-java-debug-0.59.0-universal\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="26.0.1+8-34"/>
+    <property name="stdin.encoding" value="Cp1252"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="70.0"/>
+  </properties>
+  <testcase name="test01_AdminLogin" classname="com.employee.automation.TestNG_Report" time="2.791">
+    <system-out><![CDATA[
+========================================
+  Employee Portal — Full Automation Test
+  Admin Password : asbardy
+  URL            : http://localhost:5173/
+========================================
+
+--- Test 1: Admin Login (password: asbardy) ---
+  Admin login with password 'asbardy'                     [PASS]
+]]></system-out>
+    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Jul 18, 2026 4:41:40 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 150, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 150
+]]></system-err>
+  </testcase>
+  <testcase name="test02_Dashboard" classname="com.employee.automation.TestNG_Report" time="3.86">
+    <system-out><![CDATA[--- Test 2: Dashboard ---
+  Dashboard stat cards visible                            [PASS]
+  Sidebar rendered correctly                              [PASS]
+]]></system-out>
+  </testcase>
+  <testcase name="test03_EmployeesSection" classname="com.employee.automation.TestNG_Report" time="5.972">
+    <system-out><![CDATA[--- Test 3: Employees Section ---
+  Employee list with EMP-IDs rendered                     [PASS]
+  Search filter for 'Bala' works                          [PASS]
+  Add Employee form visible (admin)                       [PASS]
+]]></system-out>
+  </testcase>
+  <testcase name="test03b_AddEmployeeViaUI" classname="com.employee.automation.TestNG_Report" time="11.858">
+    <system-out><![CDATA[--- Test 3B: Add Employee (UI → Express API → db.json) ---
+  Adding: AutoTest Employee | QA Engineer | Engineering | ₹95000
+  Add Employee form fields filled (Name/Role/Dept/Salary) [PASS]
+  New employee visible in UI (list refreshed from API)    [PASS]
+  New employee in Express API  (GET /api/employees)       [PASS]
+
+  ✔  'AutoTest Employee' is saved in db.json via Express.
+
+]]></system-out>
+  </testcase>
+  <testcase name="test04_AttendanceSection" classname="com.employee.automation.TestNG_Report" time="4.944">
+    <system-out><![CDATA[--- Test 4: Attendance Section ---
+  Attendance Present/Absent/Half Day buttons visible      [PASS]
+  Date picker input present                               [PASS]
+  Clicked 'Present' for first employee                    [PASS]
+]]></system-out>
+  </testcase>
+  <testcase name="test05_ScheduleSection" classname="com.employee.automation.TestNG_Report" time="4.086">
+    <system-out><![CDATA[--- Test 5: Schedule / Work Tasks ---
+  Task status labels visible (Pending/In Progress/Done)   [PASS]
+  Task cards rendered (3 found)                           [PASS]
+  Countdown timers present                                [FAIL]
+  Add Task form visible (admin)                           [PASS]
+]]></system-out>
+  </testcase>
+  <testcase name="test06_SalarySection" classname="com.employee.automation.TestNG_Report" time="4.232">
+    <system-out><![CDATA[--- Test 6: Salary Section ---
+  Salary records table visible                            [PASS]
+  Salary Paid/Pending status visible                      [PASS]
+  Pay Slip buttons present (9 found)                      [PASS]
+  Mark Paid buttons present (0 found)                     [PASS]
+  Salary Day countdown banner visible                     [PASS]
+]]></system-out>
+  </testcase>
+  <testcase name="test07_LeaveSection" classname="com.employee.automation.TestNG_Report" time="6.149">
+    <system-out><![CDATA[--- Test 7: Leave Requests (Admin) ---
+  Leave Management section loaded                         [PASS]
+  Leave filter tabs rendered (4 tabs)                     [PASS]
+  Clicked leave tab: All
+1                                [PASS]
+  Clicked leave tab: Pending
+0                            [PASS]
+  Clicked leave tab: Approved
+1                           [PASS]
+  Clicked leave tab: Rejected
+0                           [PASS]
+]]></system-out>
+  </testcase>
+  <testcase name="test08_ChatBot" classname="com.employee.automation.TestNG_Report" time="7.016">
+    <system-out><![CDATA[--- Test 8: EmpBot Chatbot ---
+  Chatbot panel opened                                    [PASS]
+  Bot replied (2 bot messages)                            [PASS]
+  Quick prompt clicked successfully                       [PASS]
+  Chatbot closed                                          [PASS]
+]]></system-out>
+  </testcase>
+  <testcase name="test09_BackToDashboard" classname="com.employee.automation.TestNG_Report" time="2.842">
+    <system-out><![CDATA[--- Test 9: Navigate back to Dashboard ---
+  Successfully navigated back to Dashboard                [PASS]
+]]></system-out>
+  </testcase>
+  <testcase name="test10_Logout" classname="com.employee.automation.TestNG_Report" time="1.772">
+    <system-out><![CDATA[--- Test 10: Logout ---
+  Logout successful — login page visible                  [PASS]
+]]></system-out>
+  </testcase>
+</testsuite>

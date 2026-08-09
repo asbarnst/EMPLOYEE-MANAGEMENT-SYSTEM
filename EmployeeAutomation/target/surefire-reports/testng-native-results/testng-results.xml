@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-07-18T16:41:32 IST" name="Surefire suite" finished-at="2026-07-18T16:42:38 IST" duration-ms="66067">
+    <groups>
+    </groups>
+    <test started-at="2026-07-18T16:41:32 IST" name="Surefire test" finished-at="2026-07-18T16:42:38 IST" duration-ms="66067">
+      <class name="com.employee.automation.TestNG_Report">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:41:32 IST" name="setup" finished-at="2026-07-18T16:41:42 IST" duration-ms="9996" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="test01_AdminLogin()[pri:1, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:41:42 IST" name="test01_AdminLogin" finished-at="2026-07-18T16:41:45 IST" duration-ms="2784" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test01_AdminLogin -->
+        <test-method signature="test02_Dashboard()[pri:2, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:41:45 IST" name="test02_Dashboard" finished-at="2026-07-18T16:41:49 IST" depends-on-methods="com.employee.automation.TestNG_Report.test01_AdminLogin" duration-ms="3868" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test02_Dashboard -->
+        <test-method signature="test03_EmployeesSection()[pri:3, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:41:49 IST" name="test03_EmployeesSection" finished-at="2026-07-18T16:41:55 IST" depends-on-methods="com.employee.automation.TestNG_Report.test02_Dashboard" duration-ms="5970" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test03_EmployeesSection -->
+        <test-method signature="test03b_AddEmployeeViaUI()[pri:4, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:41:55 IST" name="test03b_AddEmployeeViaUI" finished-at="2026-07-18T16:42:07 IST" depends-on-methods="com.employee.automation.TestNG_Report.test03_EmployeesSection" duration-ms="11860" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test03b_AddEmployeeViaUI -->
+        <test-method signature="test04_AttendanceSection()[pri:5, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:42:07 IST" name="test04_AttendanceSection" finished-at="2026-07-18T16:42:12 IST" depends-on-methods="com.employee.automation.TestNG_Report.test03b_AddEmployeeViaUI" duration-ms="4944" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test04_AttendanceSection -->
+        <test-method signature="test05_ScheduleSection()[pri:6, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:42:12 IST" name="test05_ScheduleSection" finished-at="2026-07-18T16:42:16 IST" depends-on-methods="com.employee.automation.TestNG_Report.test04_AttendanceSection" duration-ms="4085" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test05_ScheduleSection -->
+        <test-method signature="test06_SalarySection()[pri:7, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:42:16 IST" name="test06_SalarySection" finished-at="2026-07-18T16:42:20 IST" depends-on-methods="com.employee.automation.TestNG_Report.test05_ScheduleSection" duration-ms="4232" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test06_SalarySection -->
+        <test-method signature="test07_LeaveSection()[pri:8, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:42:20 IST" name="test07_LeaveSection" finished-at="2026-07-18T16:42:26 IST" depends-on-methods="com.employee.automation.TestNG_Report.test06_SalarySection" duration-ms="6149" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test07_LeaveSection -->
+        <test-method signature="test08_ChatBot()[pri:9, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:42:26 IST" name="test08_ChatBot" finished-at="2026-07-18T16:42:33 IST" depends-on-methods="com.employee.automation.TestNG_Report.test07_LeaveSection" duration-ms="7016" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test08_ChatBot -->
+        <test-method signature="test09_BackToDashboard()[pri:9, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:42:33 IST" name="test09_BackToDashboard" finished-at="2026-07-18T16:42:36 IST" depends-on-methods="com.employee.automation.TestNG_Report.test08_ChatBot" duration-ms="2837" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test09_BackToDashboard -->
+        <test-method signature="test10_Logout()[pri:10, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:42:36 IST" name="test10_Logout" finished-at="2026-07-18T16:42:38 IST" depends-on-methods="com.employee.automation.TestNG_Report.test09_BackToDashboard" duration-ms="1772" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test10_Logout -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.employee.automation.TestNG_Report@657c8ad9]" started-at="2026-07-18T16:42:38 IST" name="teardown" finished-at="2026-07-18T16:42:38 IST" duration-ms="446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.employee.automation.TestNG_Report -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
